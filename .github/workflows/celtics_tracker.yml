@@ -25,4 +25,4 @@ jobs:
       - name: Run tracker
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        run: python discord_celtics_tracker.py
+        run: python discord_bot_test.py
