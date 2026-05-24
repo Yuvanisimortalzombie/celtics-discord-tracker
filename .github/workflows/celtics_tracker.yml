@@ -20,7 +20,7 @@ jobs:
 
       - name: Install packages
         run: |
-          pip install nba_api pandas requests
+          pip install requests
 
       - name: Run tracker
         env:
