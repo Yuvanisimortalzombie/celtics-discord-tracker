@@ -45,7 +45,11 @@ def send_discord(body):
 
 def get_latest_game_id():
     row = celtics_stats.get_latest_celtics_game_row()
-    return str(row["GAME_ID"]), row
+
+    if row is None:
+        return None, None
+
+    return "ESPN_GAME", row
 
 
 def load_last_sent():
@@ -60,6 +64,10 @@ def save_last_sent(game_id):
 
 def main():
     latest_game_id, latest_game_row = get_latest_game_id()
+
+    if latest_game_row is None:
+        print("No Celtics game found today.")
+    return
 
     print("Latest game:", latest_game_id)
 
